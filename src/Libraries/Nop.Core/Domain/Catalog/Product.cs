@@ -278,6 +278,10 @@ namespace Nop.Core.Domain.Catalog
         /// </summary>
         public int StockQuantity { get; set; }
         /// <summary>
+        /// Gets or sets the string describing the "back in stock" timescale 
+        /// </summary>
+        public string BackInStockTimescale { get; set; }
+        /// <summary>
         /// Gets or sets a value indicating whether to display stock availability
         /// </summary>
         public bool DisplayStockAvailability { get; set; }

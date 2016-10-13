@@ -759,6 +759,9 @@ namespace Nop.Services.ExportImport
                             case "StockQuantity":
                                 product.StockQuantity = property.IntValue;
                                 break;
+                            case "BackInStockTimescale":
+                                product.BackInStockTimescale = property.StringValue;
+                                break;
                             case "DisplayStockAvailability":
                                 product.DisplayStockAvailability = property.BooleanValue;
                                 break;

@@ -244,6 +244,7 @@
         $('#pnlWarehouse').show();
         $('#pnlMultipleWarehouses').hide();
         $('#pnlStockQuantity').hide();
+        $('#pnlBackInStockTimescale').hide();
         $('#pnlDisplayStockAvailability').hide();
         $('#pnlDisplayStockQuantity').hide();
         $('#pnlMinStockQuantity').hide();
@@ -254,6 +255,7 @@
         $('#pnlAllowAddingOnlyExistingAttributeCombinations').hide();
     } else if (selectedManageInventoryMethodId == @(((int) ManageInventoryMethod.ManageStock).ToString())) {
         $('#pnlUseMultipleWarehouses').show();
+        $('#pnlBackInStockTimescale').show();
 
         if ($('#@Html.FieldIdFor(model => model.UseMultipleWarehouses)').is(':checked')) {
             $('#pnlWarehouse').hide();
@@ -1584,6 +1586,15 @@
                             {
                                 @T("Admin.Catalog.Products.ProductWarehouseInventory.Fields.Warehouse.NotDefined")
                             }
+                        </div>
+                    </div>
+                    <div class="form-group @(Model.ProductEditorSettingsModel.BackInStockTimescale ? null : "advanced-setting")" id="pnlBackInStockTimescale">
+                        <div class="@leftColumnClass">
+                            @Html.NopLabelFor(model => model.BackInStockTimescale)
+                        </div>
+                        <div class="@rightColumnClass">
+                            @Html.NopEditorFor(model => model.BackInStockTimescale)
+                            @Html.ValidationMessageFor(model => model.BackInStockTimescale)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DisplayStockAvailability ? null : "advanced-setting")" id="pnlDisplayStockAvailability">

@@ -201,6 +201,11 @@ namespace Nop.Core.Domain.Catalog
         public bool Warehouse { get; set; }
 
         /// <summary>
+        /// Gets or sets the string describing the "back in stock" timescale 
+        /// </summary>
+        public bool BackInStockTimescale { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether 'Display stock availability' field is shown
         /// </summary>
         public bool DisplayStockAvailability { get; set; }

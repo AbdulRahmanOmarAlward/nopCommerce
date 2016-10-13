@@ -248,6 +248,9 @@ namespace Nop.Admin.Models.Catalog
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.DisplayStockAvailability")]
         public bool DisplayStockAvailability { get; set; }
 
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.BackInStockTimescale")]
+        public string BackInStockTimescale { get; set; }
+
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.DisplayStockQuantity")]
         public bool DisplayStockQuantity { get; set; }
 

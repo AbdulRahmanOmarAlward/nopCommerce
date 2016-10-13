@@ -122,7 +122,9 @@ namespace Nop.Services.Catalog
                             switch (product.BackorderMode)
                             {
                                 case BackorderMode.NoBackorders:
-                                    stockMessage = localizationService.GetResource("Products.Availability.OutOfStock");
+                                    stockMessage = string.IsNullOrEmpty(product.BackInStockTimescale)
+                                        ? localizationService.GetResource("Products.Availability.OutOfStock")
+                                        : string.Format(localizationService.GetResource("Products.Availability.OutOfStockWithTimescale"), product.BackInStockTimescale);
                                     break;
                                 case BackorderMode.AllowQtyBelow0:
                                     stockMessage = localizationService.GetResource("Products.Availability.InStock");
@@ -164,7 +166,9 @@ namespace Nop.Services.Catalog
                             }
                             else
                             {
-                                stockMessage = localizationService.GetResource("Products.Availability.OutOfStock");
+                                stockMessage = string.IsNullOrEmpty(product.BackInStockTimescale)
+                                    ? localizationService.GetResource("Products.Availability.OutOfStock")
+                                    : string.Format(localizationService.GetResource("Products.Availability.OutOfStockWithTimescale"), product.BackInStockTimescale);
                             }
                         }
                         else
@@ -172,7 +176,9 @@ namespace Nop.Services.Catalog
                             //no combination configured
                             if (product.AllowAddingOnlyExistingAttributeCombinations)
                             {
-                                stockMessage = localizationService.GetResource("Products.Availability.OutOfStock");
+                                stockMessage = string.IsNullOrEmpty(product.BackInStockTimescale)
+                                    ? localizationService.GetResource("Products.Availability.OutOfStock")
+                                    : string.Format(localizationService.GetResource("Products.Availability.OutOfStockWithTimescale"), product.BackInStockTimescale);
                             }
                             else
                             {

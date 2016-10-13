@@ -356,6 +356,21 @@ set @resources='
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ShowSkuOnProductDetailsPage.Hint">
     <Value>Check to show product SKU on the product details page in public store.</Value>
   </LocaleResource>
+  <LocaleResource Name="ShoppingCart.OutOfStockWithTimescale">
+    <Value>Out of stock, available in {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Products.Availability.OutOfStockWithTimescale">
+    <Value>Out of stock, available in {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.BackInStockTimescale">
+    <Value>Back in stock timescale</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.BackInStockTimescale.Hint">
+    <Value>Specify the string that indicates when the product is back in stock (e.g. 10-14 days)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.BackInStockTimescale">
+    <Value>Back in stock timescale</Value>
+  </LocaleResource>
 </Language>
 '
 
@@ -985,4 +1000,12 @@ GO
 UPDATE [Setting] 
 SET [Name] = N'catalogsettings.showskuonproductdetailspage' 
 WHERE [Name] = N'catalogsettings.showproductsku'
+GO
+
+--new column
+IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id=object_id('[Product]') and NAME='BackInStockTimescale')
+BEGIN
+	ALTER TABLE [Product]
+	ADD [BackInStockTimescale] nvarchar(1000) NULL
+END
 GO

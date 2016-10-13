@@ -72,6 +72,7 @@ namespace Nop.Data.Tests.Catalog
                 UseMultipleWarehouses = true,
                 WarehouseId = 6,
                 StockQuantity = 13,
+                BackInStockTimescale = "10-14 days",
                 DisplayStockAvailability = true,
                 DisplayStockQuantity = true,
                 MinStockQuantity = 14,
@@ -181,6 +182,7 @@ namespace Nop.Data.Tests.Catalog
             fromDb.UseMultipleWarehouses.ShouldEqual(true);
             fromDb.WarehouseId.ShouldEqual(6);
             fromDb.StockQuantity.ShouldEqual(13);
+            fromDb.BackInStockTimescale.ShouldEqual("10-14 days");
             fromDb.DisplayStockAvailability.ShouldEqual(true);
             fromDb.DisplayStockQuantity.ShouldEqual(true);
             fromDb.MinStockQuantity.ShouldEqual(14);

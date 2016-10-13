@@ -122,6 +122,9 @@ namespace Nop.Admin.Models.Settings
         [NopResourceDisplayName("Admin.Configuration.Settings.ProductEditor.Warehouse")]
         public bool Warehouse { get; set; }
 
+        [NopResourceDisplayName("Admin.Configuration.Settings.ProductEditor.BackInStockTimescale")]
+        public bool BackInStockTimescale { get; set; }
+
         [NopResourceDisplayName("Admin.Configuration.Settings.ProductEditor.DisplayStockAvailability")]
         public bool DisplayStockAvailability { get; set; }
 

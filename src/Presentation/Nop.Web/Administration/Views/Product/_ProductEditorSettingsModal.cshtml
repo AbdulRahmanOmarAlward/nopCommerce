@@ -546,6 +546,15 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-10">
+                                                @Html.NopLabelFor(model => model.ProductEditorSettingsModel.BackInStockTimescale)
+                                            </div>
+                                            <div class="col-md-2">
+                                                @Html.NopEditorFor(model => model.ProductEditorSettingsModel.BackInStockTimescale)
+                                                @Html.ValidationMessageFor(model => model.ProductEditorSettingsModel.BackInStockTimescale)
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
                                                 @Html.NopLabelFor(model => model.ProductEditorSettingsModel.DisplayStockAvailability)
                                             </div>
                                             <div class="col-md-2">

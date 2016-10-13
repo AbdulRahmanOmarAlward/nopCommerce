@@ -2550,6 +2550,12 @@
   <LocaleResource Name="Admin.Catalog.Products.Fields.AvailableStartDateTime.Hint">
     <Value>The start of the product's availability in Coordinated Universal Time (UTC).</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.BackInStockTimescale">
+    <Value>Back in stock timescale</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.BackInStockTimescale.Hint">
+    <Value>Specify the string that indicates when the product is back in stock (e.g. 10-14 days)</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.BackorderMode">
     <Value>Backorders</Value>
   </LocaleResource>
@@ -6584,6 +6590,9 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.AvailableStartDate">
     <Value>Available start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.BackInStockTimescale">
+    <Value>Back in stock timescale</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.Backorders">
     <Value>Backorders</Value>
@@ -14550,6 +14559,9 @@
   <LocaleResource Name="Products.Availability.OutOfStock">
     <Value>Out of stock</Value>
   </LocaleResource>
+  <LocaleResource Name="Products.Availability.OutOfStockWithTimescale">
+    <Value>Out of stock, available in {0}</Value>
+  </LocaleResource>
   <LocaleResource Name="Products.BasePrice">
     <Value>equates to {0} per {1} {2}</Value>
   </LocaleResource>
@@ -15218,6 +15230,9 @@
   </LocaleResource>
   <LocaleResource Name="ShoppingCart.OutOfStock">
     <Value>Out of stock</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.OutOfStockWithTimescale">
+    <Value>Out of stock, available in {0}</Value>
   </LocaleResource>
   <LocaleResource Name="ShoppingCart.PreOrder">
     <Value>Pre-order</Value>

@@ -9252,6 +9252,7 @@ namespace Nop.Services.Installation
                 TaxCategoryId = _taxCategoryRepository.Table.Single(tc => tc.Name == "Apparel").Id,
                 ManageInventoryMethod = ManageInventoryMethod.ManageStock,
                 StockQuantity = 0,
+                BackInStockTimescale = "10-14 days",
                 NotifyAdminForQuantityBelow = 1,
                 AllowBackInStockSubscriptions = false,
                 DisplayStockAvailability = true,

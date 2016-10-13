@@ -389,7 +389,9 @@ namespace Nop.Services.Orders
                                 if (maximumQuantityCanBeAdded < quantity)
                                 {
                                     if (maximumQuantityCanBeAdded <= 0)
-                                        warnings.Add(_localizationService.GetResource("ShoppingCart.OutOfStock"));
+                                        warnings.Add(string.IsNullOrEmpty(product.BackInStockTimescale)
+                                            ? _localizationService.GetResource("ShoppingCart.OutOfStock")
+                                            : string.Format(_localizationService.GetResource("ShoppingCart.OutOfStockWithTimescale"), product.BackInStockTimescale));
                                     else
                                         warnings.Add(string.Format(_localizationService.GetResource("ShoppingCart.QuantityExceedsStock"), maximumQuantityCanBeAdded));
                                 }
@@ -408,7 +410,9 @@ namespace Nop.Services.Orders
                                     int maximumQuantityCanBeAdded = combination.StockQuantity;
                                     if (maximumQuantityCanBeAdded <= 0)
                                     {
-                                        warnings.Add(_localizationService.GetResource("ShoppingCart.OutOfStock"));
+                                        warnings.Add(string.IsNullOrEmpty(product.BackInStockTimescale)
+                                            ? _localizationService.GetResource("ShoppingCart.OutOfStock")
+                                            : string.Format(_localizationService.GetResource("ShoppingCart.OutOfStockWithTimescale"), product.BackInStockTimescale));
                                     }
                                     else
                                     {
@@ -422,7 +426,9 @@ namespace Nop.Services.Orders
                                 if (product.AllowAddingOnlyExistingAttributeCombinations)
                                 {
                                     //maybe, is it better  to display something like "No such product/combination" message?
-                                    warnings.Add(_localizationService.GetResource("ShoppingCart.OutOfStock"));
+                                    warnings.Add(string.IsNullOrEmpty(product.BackInStockTimescale)
+                                        ? _localizationService.GetResource("ShoppingCart.OutOfStock")
+                                        : string.Format(_localizationService.GetResource("ShoppingCart.OutOfStockWithTimescale"), product.BackInStockTimescale));
                                 }
                             }
                         }

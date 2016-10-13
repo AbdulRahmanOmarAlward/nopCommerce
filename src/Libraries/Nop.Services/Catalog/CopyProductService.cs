@@ -183,6 +183,7 @@ namespace Nop.Services.Catalog
                 UseMultipleWarehouses = product.UseMultipleWarehouses,
                 WarehouseId = product.WarehouseId,
                 StockQuantity = product.StockQuantity,
+                BackInStockTimescale = product.BackInStockTimescale,
                 DisplayStockAvailability = product.DisplayStockAvailability,
                 DisplayStockQuantity = product.DisplayStockQuantity,
                 MinStockQuantity = product.MinStockQuantity,
